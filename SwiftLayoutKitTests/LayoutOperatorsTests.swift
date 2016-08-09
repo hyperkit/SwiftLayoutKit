@@ -35,7 +35,7 @@ class LayoutOperatorsTests: XCTestCase {
     func testPriorityOperator() {
         
         let priority: Float = 100
-        let someAttribute = AutoLayoutAttribute(type: .Top, view: UIView())
+        let someAttribute = AutoLayoutAttribute(type: .top, view: UIView())
         
         let attribute = someAttribute ~ priority
         
@@ -44,17 +44,17 @@ class LayoutOperatorsTests: XCTestCase {
     
     func testEqualOperatorBetweenTwoLayoutAttributes() {
         
-        let attributeOne = AutoLayoutAttribute(type: .Top, view: UIView())
-        let attributeTwo = AutoLayoutAttribute(type: .Top, view: UIView())
+        let attributeOne = AutoLayoutAttribute(type: .top, view: UIView())
+        let attributeTwo = AutoLayoutAttribute(type: .top, view: UIView())
         
         let constraint = attributeOne == attributeTwo
         
-        XCTAssert(constraint.relation == .Equal, "The constraint relation should be set to Equal")
+        XCTAssert(constraint.relation == .equal, "The constraint relation should be set to Equal")
     }
     
     func testEqualOperatorWithNumber() {
         
-        let attribute = AutoLayoutAttribute(type: .Width, view: UIView())
+        let attribute = AutoLayoutAttribute(type: .width, view: UIView())
         
         let constraint = attribute == 200
         
@@ -63,47 +63,47 @@ class LayoutOperatorsTests: XCTestCase {
     
     func testGreaterThanOrEqualOperatorBetweenTwoLayoutAttributes() {
         
-        let attributeOne = AutoLayoutAttribute(type: .Width, view: UIView())
-        let attributeTwo = AutoLayoutAttribute(type: .Width, view: UIView())
+        let attributeOne = AutoLayoutAttribute(type: .width, view: UIView())
+        let attributeTwo = AutoLayoutAttribute(type: .width, view: UIView())
         
         let constraint = attributeOne >= attributeTwo
         
-        XCTAssert(constraint.relation == .GreaterThanOrEqual, "The constraint relation should be set to GreaterThanOrEqual")
+        XCTAssert(constraint.relation == .greaterThanOrEqual, "The constraint relation should be set to GreaterThanOrEqual")
     }
     
     func testGreaterThanOrEqualOperatorWithNumber() {
         
-        let attribute = AutoLayoutAttribute(type: .Width, view: UIView())
+        let attribute = AutoLayoutAttribute(type: .width, view: UIView())
         
         let constraint = attribute >= 200
         
-        XCTAssert(constraint.relation == .GreaterThanOrEqual, "The constraint relation should be set to GreaterThanOrEqual")
+        XCTAssert(constraint.relation == .greaterThanOrEqual, "The constraint relation should be set to GreaterThanOrEqual")
         XCTAssert(constraint.constant == 200, "The constraint constant should match the attribute constant")
     }
     
     func testLessThanOrEqualOperatorBetweenTwoLayoutAttributes() {
         
-        let attributeOne = AutoLayoutAttribute(type: .Width, view: UIView())
-        let attributeTwo = AutoLayoutAttribute(type: .Width, view: UIView())
+        let attributeOne = AutoLayoutAttribute(type: .width, view: UIView())
+        let attributeTwo = AutoLayoutAttribute(type: .width, view: UIView())
         
         let constraint = attributeOne <= attributeTwo
         
-        XCTAssert(constraint.relation == .LessThanOrEqual, "The constraint relation should be set to LessThanOrEqual")
+        XCTAssert(constraint.relation == .lessThanOrEqual, "The constraint relation should be set to LessThanOrEqual")
     }
     
     func testLessThanOrEqualOperatorWithNumber() {
         
-        let attribute = AutoLayoutAttribute(type: .Width, view: UIView())
+        let attribute = AutoLayoutAttribute(type: .width, view: UIView())
         
         let constraint = attribute <= 200
         
-        XCTAssert(constraint.relation == .LessThanOrEqual, "The constraint relation should be set to LessThanOrEqual")
+        XCTAssert(constraint.relation == .lessThanOrEqual, "The constraint relation should be set to LessThanOrEqual")
         XCTAssert(constraint.constant == 200, "The constraint constant should match the attribute constant")
     }
     
     func testAdditionOperator() {
         
-        let someAttribute = AutoLayoutAttribute(type: .Width, view: UIView())
+        let someAttribute = AutoLayoutAttribute(type: .width, view: UIView())
         
         let attribute = someAttribute + 200
         
@@ -112,7 +112,7 @@ class LayoutOperatorsTests: XCTestCase {
     
     func testSubtractionOperator() {
         
-        let someAttribute = AutoLayoutAttribute(type: .Width, view: UIView())
+        let someAttribute = AutoLayoutAttribute(type: .width, view: UIView())
         
         let attribute = someAttribute - 200
         
@@ -121,7 +121,7 @@ class LayoutOperatorsTests: XCTestCase {
     
     func testMultiplicationOperator() {
         
-        let someAttribute = AutoLayoutAttribute(type: .Width, view: UIView())
+        let someAttribute = AutoLayoutAttribute(type: .width, view: UIView())
         
         let attribute = someAttribute * 2
         
@@ -130,7 +130,7 @@ class LayoutOperatorsTests: XCTestCase {
     
     func testDivisionOperator() {
         
-        let someAttribute = AutoLayoutAttribute(type: .Width, view: UIView())
+        let someAttribute = AutoLayoutAttribute(type: .width, view: UIView())
         
         let attribute = someAttribute / 2
         

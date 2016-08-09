@@ -44,14 +44,14 @@ public func ~ (left: LayoutAttribute, priority: Float) -> LayoutAttribute {
 
 public func == (left: LayoutAttribute, right: LayoutAttribute) -> NSLayoutConstraint {
     
-    return left.makeConstraintWith(relation: .Equal, toAttribute: right)
+    return left.makeConstraintWith(relation: .equal, toAttribute: right)
 }
 
 public func == (left: LayoutAttribute, constant: CGFloat) -> NSLayoutConstraint {
     
     let attribute = AutoLayoutAttribute(attribute: left, constant: constant)
     
-    return attribute.makeConstraintWith(relation: .Equal, toAttribute: nil)
+    return attribute.makeConstraintWith(relation: .equal, toAttribute: nil)
 }
 
 ///////////////////////////////////////////////////////
@@ -60,26 +60,26 @@ public func == (left: LayoutAttribute, constant: CGFloat) -> NSLayoutConstraint 
 
 public func >= (left: LayoutAttribute, right: LayoutAttribute) -> NSLayoutConstraint {
     
-    return left.makeConstraintWith(relation: .GreaterThanOrEqual, toAttribute: right)
+    return left.makeConstraintWith(relation: .greaterThanOrEqual, toAttribute: right)
 }
 
 public func >= (left: LayoutAttribute, constant: CGFloat) -> NSLayoutConstraint {
     
     let attribute = AutoLayoutAttribute(attribute: left, constant: constant)
     
-    return attribute.makeConstraintWith(relation: .GreaterThanOrEqual, toAttribute: nil)
+    return attribute.makeConstraintWith(relation: .greaterThanOrEqual, toAttribute: nil)
 }
 
 public func <= (left: LayoutAttribute, right: LayoutAttribute) -> NSLayoutConstraint {
     
-    return left.makeConstraintWith(relation: .LessThanOrEqual, toAttribute: right)
+    return left.makeConstraintWith(relation: .lessThanOrEqual, toAttribute: right)
 }
 
 public func <= (left: LayoutAttribute, constant: CGFloat) -> NSLayoutConstraint {
     
     let attribute = AutoLayoutAttribute(attribute: left, constant: constant)
     
-    return attribute.makeConstraintWith(relation: .LessThanOrEqual, toAttribute: nil)
+    return attribute.makeConstraintWith(relation: .lessThanOrEqual, toAttribute: nil)
 }
 
 ///////////////////////////////////////////////////////

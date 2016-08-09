@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIView {
     
-    func attribute(type: NSLayoutAttribute) -> LayoutAttribute {
+    func attribute(_ type: NSLayoutAttribute) -> LayoutAttribute {
         
         return AutoLayoutAttribute(type: type, view: self)
     }

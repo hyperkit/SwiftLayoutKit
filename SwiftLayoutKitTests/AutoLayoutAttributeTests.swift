@@ -11,7 +11,7 @@ import XCTest
 
 class AutoLayoutAttributeTests: XCTestCase {
     
-    let attributeType: NSLayoutAttribute = .Top
+    let attributeType: NSLayoutAttribute = .top
     
     lazy var view: UIView = {
         
@@ -71,13 +71,13 @@ class AutoLayoutAttributeTests: XCTestCase {
         let secondView = UIView()
         secondView.translatesAutoresizingMaskIntoConstraints = false
         
-        let secondAttribute = AutoLayoutAttribute(type: .Bottom, view: secondView, multiplier: multiplier, constant: constant, priority: priority)
+        let secondAttribute = AutoLayoutAttribute(type: .bottom, view: secondView, multiplier: multiplier, constant: constant, priority: priority)
         
-        let constraint = layoutAttribute.makeConstraintWith(relation: .Equal, toAttribute: secondAttribute)
+        let constraint = layoutAttribute.makeConstraintWith(relation: .equal, toAttribute: secondAttribute)
         
         XCTAssert(constraint.firstItem === layoutAttribute.view, "Should point to the view in the first attribute")
         XCTAssert(constraint.firstAttribute == layoutAttribute.type, "Should be equal to the type of the first layout attribute")
-        XCTAssert(constraint.relation == .Equal, "Relations should match")
+        XCTAssert(constraint.relation == .equal, "Relations should match")
         XCTAssert(constraint.secondItem === secondAttribute.view, "Should point to the view in the second attribute")
         XCTAssert(constraint.secondAttribute == secondAttribute.type, "Should be equal to the type of the second layout attribute")
         
@@ -88,13 +88,13 @@ class AutoLayoutAttributeTests: XCTestCase {
     
     func testThatWeCanMakeConstraintWithNoRelaton() {
         
-        let attribute = AutoLayoutAttribute(type: .Width, view: view, multiplier: 1, constant: constant, priority: priority)
+        let attribute = AutoLayoutAttribute(type: .width, view: view, multiplier: 1, constant: constant, priority: priority)
         
-        let constraint = attribute.makeConstraintWith(relation: .Equal, toAttribute: nil)
+        let constraint = attribute.makeConstraintWith(relation: .equal, toAttribute: nil)
         
         XCTAssert(constraint.firstItem === attribute.view, "Should point to the view in the attribute")
         XCTAssert(constraint.firstAttribute == attribute.type, "Should be equal to the type of the layout attribute")
-        XCTAssert(constraint.relation == .Equal, "Relations should match")
+        XCTAssert(constraint.relation == .equal, "Relations should match")
         
         XCTAssert(constraint.multiplier == 1, "Multipliers should match")
         XCTAssertEqual(constraint.constant, constant, "Constants should match")

@@ -40,14 +40,14 @@ struct AutoLayoutAttribute: LayoutAttribute {
         self.init(type: attribute.type, view: attribute.view, multiplier: attribute.multiplier, constant: attribute.constant, priority: priority)
     }
     
-    func makeConstraintWith(relation relation: NSLayoutRelation, toAttribute: LayoutAttribute?) -> NSLayoutConstraint {
+    func makeConstraintWith(relation: NSLayoutRelation, toAttribute: LayoutAttribute?) -> NSLayoutConstraint {
         
         let constraint = NSLayoutConstraint(
             item: view,
             attribute: type,
             relatedBy: relation,
             toItem: toAttribute?.view ?? nil,
-            attribute: toAttribute?.type ?? .NotAnAttribute,
+            attribute: toAttribute?.type ?? .notAnAttribute,
             multiplier: toAttribute?.multiplier ?? multiplier,
             constant: toAttribute?.constant ?? constant
         )

@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     private lazy var boxView: UIView = {
         
         let view = UIView()
-            view.backgroundColor = UIColor.blueColor()
+            view.backgroundColor = UIColor.blue
             view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.white
         
         view.addSubview(titleLabel)
         view.addSubview(boxView)
@@ -54,11 +54,11 @@ class ViewController: UIViewController {
         
         view +| constraintsWith(format: "|-[title]-|", forViews: views)
         
-        view +| titleLabel.attribute(.Top) == view.attribute(.Top) + 30
-        view +| boxView.attribute(.Width) == 100
-        view +| boxView.attribute(.Height) == 100
+        view +| titleLabel.attribute(.top) == view.attribute(.top) + 30
+        view +| boxView.attribute(.width) == 100
+        view +| boxView.attribute(.height) == 100
         
-        view +| constraintsWith(align: .CenterX, toView: view, forViews: boxView)
-        view +| constraintsWith(align: .CenterY, toView: view, forViews: boxView)
+        view +| constraintsWith(align: .centerX, toView: view, forViews: boxView)
+        view +| constraintsWith(align: .centerY, toView: view, forViews: boxView)
     }
 }

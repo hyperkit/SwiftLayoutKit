@@ -17,9 +17,9 @@ import UIKit
 ///
 /// - returns: An array with NSLayoutConstraint objects
 ///
-public func constraintsWith(format format: String, forViews views: [String: UIView], options: NSLayoutFormatOptions = [] , metrics: [String: CGFloat]? = nil) -> [NSLayoutConstraint] {
+public func constraintsWith(format: String, forViews views: [String: UIView], options: NSLayoutFormatOptions = [] , metrics: [String: CGFloat]? = nil) -> [NSLayoutConstraint] {
     
-    return NSLayoutConstraint.constraintsWithVisualFormat(format, options: options, metrics: metrics, views: views)
+    return NSLayoutConstraint.constraints(withVisualFormat: format, options: options, metrics: metrics, views: views)
 }
 
 /// Aligns multiple views to a view by a given NSLayoutAttribute

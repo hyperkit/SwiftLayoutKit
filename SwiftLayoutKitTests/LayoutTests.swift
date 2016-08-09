@@ -11,7 +11,7 @@ import XCTest
 
 class LayoutTests: XCTestCase {
     
-    let containerView = UIView(frame: CGRectMake(0, 0, 200, 200))
+    let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
     let firstView = UIView()
     let secondView = UIView()
     
@@ -29,10 +29,10 @@ class LayoutTests: XCTestCase {
     
     func testThatWeCanAlignViewsToView() {
         
-        let centerPoint = CGPointMake(100, 100)
+        let centerPoint = CGPoint(x: 100, y: 100)
         
-        let centerX = constraintsWith(align: .CenterX, toView: containerView, forViews: firstView, secondView)
-        let centerY = constraintsWith(align: .CenterY, toView: containerView, forViews: firstView, secondView)
+        let centerX = constraintsWith(align: .centerX, toView: containerView, forViews: firstView, secondView)
+        let centerY = constraintsWith(align: .centerY, toView: containerView, forViews: firstView, secondView)
         
         containerView.addConstraints(centerX)
         containerView.addConstraints(centerY)

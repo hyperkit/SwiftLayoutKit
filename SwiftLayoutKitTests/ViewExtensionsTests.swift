@@ -15,9 +15,9 @@ class ViewExtensionsTests: XCTestCase {
         
         let view = UIView()
         
-        let attribute = view.attribute(.Top)
+        let attribute = view.attribute(.top)
         
-        XCTAssert(attribute.type == .Top, "Attributes types should match")
+        XCTAssert(attribute.type == .top, "Attributes types should match")
         XCTAssert(attribute.view === view, "Views should match")
     }
 }
