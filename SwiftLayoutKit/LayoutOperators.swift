@@ -12,7 +12,12 @@ import UIKit
 // MARK: - Add Constraint/s
 ///////////////////////////////////////////////////////
 
-infix operator +| { associativity left precedence 88 }
+infix operator +| : AddConstraint
+
+precedencegroup AddConstraint {
+    associativity: left
+    lowerThan: ComparisonPrecedence, AdditionPrecedence, MultiplicationPrecedence
+}
 
 /// Adds NSLayoutConstraint to a view
 public func +| (left: UIView, constraint: NSLayoutConstraint) {
@@ -30,7 +35,12 @@ public func +| (left: UIView, constraints: [NSLayoutConstraint]) {
 // MARK: - Priority
 ///////////////////////////////////////////////////////
 
-infix operator ~ { associativity left precedence 138 }
+infix operator ~ : Priority
+
+precedencegroup Priority {
+    associativity: left
+    higherThan: AddConstraint
+}
 
 /// Set the NSLayoutConstraint's priority
 public func ~ (left: LayoutAttribute, priority: Float) -> LayoutAttribute {
@@ -50,6 +60,13 @@ public func == (left: LayoutAttribute, right: LayoutAttribute) -> NSLayoutConstr
 public func == (left: LayoutAttribute, constant: CGFloat) -> NSLayoutConstraint {
     
     let attribute = AutoLayoutAttribute(attribute: left, constant: constant)
+    
+    return attribute.makeConstraintWith(relation: .equal, toAttribute: nil)
+}
+
+public func == (left: LayoutAttribute, constant: Int) -> NSLayoutConstraint {
+    
+    let attribute = AutoLayoutAttribute(attribute: left, constant: CGFloat(constant))
     
     return attribute.makeConstraintWith(relation: .equal, toAttribute: nil)
 }
@@ -89,6 +106,11 @@ public func <= (left: LayoutAttribute, constant: CGFloat) -> NSLayoutConstraint 
 public func + (left: LayoutAttribute, constant: CGFloat) -> LayoutAttribute {
     
     return AutoLayoutAttribute(attribute: left, constant: left.constant + constant)
+}
+
+public func + (left: LayoutAttribute, constant: Int) -> LayoutAttribute {
+    
+    return AutoLayoutAttribute(attribute: left, constant: left.constant + CGFloat(constant))
 }
 
 ///////////////////////////////////////////////////////
