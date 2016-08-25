@@ -64,13 +64,6 @@ public func == (left: LayoutAttribute, constant: CGFloat) -> NSLayoutConstraint 
     return attribute.makeConstraintWith(relation: .equal, toAttribute: nil)
 }
 
-public func == (left: LayoutAttribute, constant: Int) -> NSLayoutConstraint {
-    
-    let attribute = AutoLayoutAttribute(attribute: left, constant: CGFloat(constant))
-    
-    return attribute.makeConstraintWith(relation: .equal, toAttribute: nil)
-}
-
 ///////////////////////////////////////////////////////
 // MARK: - Inequality
 ///////////////////////////////////////////////////////
@@ -106,11 +99,6 @@ public func <= (left: LayoutAttribute, constant: CGFloat) -> NSLayoutConstraint 
 public func + (left: LayoutAttribute, constant: CGFloat) -> LayoutAttribute {
     
     return AutoLayoutAttribute(attribute: left, constant: left.constant + constant)
-}
-
-public func + (left: LayoutAttribute, constant: Int) -> LayoutAttribute {
-    
-    return AutoLayoutAttribute(attribute: left, constant: left.constant + CGFloat(constant))
 }
 
 ///////////////////////////////////////////////////////
