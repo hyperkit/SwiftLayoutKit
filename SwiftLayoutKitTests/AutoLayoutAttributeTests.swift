@@ -83,7 +83,7 @@ class AutoLayoutAttributeTests: XCTestCase {
         
         XCTAssertEqual(constraint.multiplier, multiplier, "Multipliers should match")
         XCTAssertEqual(constraint.constant, constant, "Constants should match")
-        XCTAssertEqual(constraint.priority, layoutAttribute.priority, "Should be equal to the priority of the first layout attribute")
+        XCTAssertEqual(constraint.priority, UILayoutPriority(rawValue: layoutAttribute.priority), "Should be equal to the priority of the first layout attribute")
     }
     
     func testThatWeCanMakeConstraintWithNoRelaton() {
@@ -98,6 +98,6 @@ class AutoLayoutAttributeTests: XCTestCase {
         
         XCTAssert(constraint.multiplier == 1, "Multipliers should match")
         XCTAssertEqual(constraint.constant, constant, "Constants should match")
-        XCTAssertEqual(constraint.priority, priority, "Priorities should match")
+        XCTAssertEqual(constraint.priority, UILayoutPriority(rawValue: priority), "Priorities should match")
     }
 }

@@ -52,7 +52,7 @@ struct AutoLayoutAttribute: LayoutAttribute {
             constant: toAttribute?.constant ?? constant
         )
         
-        constraint.priority = priority
+        constraint.priority = UILayoutPriority(rawValue: priority)
         
         return constraint
     }
